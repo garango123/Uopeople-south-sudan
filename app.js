@@ -4,12 +4,32 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPas
 import { getFirestore, doc, setDoc, getDoc, onSnapshot, collection, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCZeYO5I9HEHYpKpPtGNXvWL3H8Ye5aaFc",
+    authDomain: "uopeople-south-sudan.firebaseapp.com",
+    projectId: "uopeople-south-sudan",
+    storageBucket: "uopeople-south-sudan.firebasestorage.app",
+    messagingSenderId: "671959173986",
+    appId: "1:671959173986:web:0220fff3dddf6bb1813a3b",
+    measurementId: "G-37SFR1EJ71"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+  
+ 
 };
 const configured = !Object.values(firebaseConfig).some(v => v.startsWith("YOUR_"));
 const $ = id => document.getElementById(id);
