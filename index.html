@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <title>UoPeople South Sudan | Student Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">U</span><span>UoPeople <b>South Sudan</b><small>STUDENT CONNECT</small></span></a>
+    <nav><a href="#about">About</a><a href="#events">Events</a><a href="#meeting">Meeting room</a></nav>
+    <div class="account"><span id="user-label">Not signed in</span><button id="signout" class="btn btn-quiet hidden">Sign out</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> ONE COMMUNITY · MANY LOCATIONS</div>
+        <h1>One table.<br><em>One student community.</em></h1>
+        <p>A welcoming online space for University of the People students across South Sudan to meet, learn, share ideas and support one another.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#meeting">Enter meeting room <span>↗</span></a><a class="text-link" href="#events">Explore upcoming events ↓</a></div>
+        <div class="hero-note"><span>✦</span> Learn together. Grow together. Stay connected.</div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="center-table"><span class="table-icon">◎</span><b>UoPeople</b><small>SOUTH SUDAN</small></div>
+        <div class="bubble bubble-a"><span class="avatar av1">JM</span><span><b>James M.</b><small>Juba · Computer Science</small></span><i></i></div>
+        <div class="bubble bubble-b"><span class="avatar av2">AG</span><span><b>Agnes G.</b><small>Wau · Business Admin</small></span><i></i></div>
+        <div class="bubble bubble-c"><span class="avatar av3">DK</span><span><b>Daniel K.</b><small>Malakal · Health Science</small></span><i></i></div>
+        <div class="visual-caption">Different places, connected by one goal.</div>
+      </div>
+    </section>
+
+    <section class="stats" id="about">
+      <div><strong>01</strong><span>A shared student space</span></div><div><strong>02</strong><span>Learning conversations</span></div><div><strong>03</strong><span>Events & announcements</span></div><div><strong>04</strong><span>Stronger connections</span></div>
+    </section>
+
+    <section class="section events-section" id="events">
+      <div class="section-heading"><div><div class="eyebrow">WHAT'S HAPPENING</div><h2>Events & meeting agenda</h2><p>Keep up with community discussions, study sessions and announcements.</p></div><span class="section-pill">COMMUNITY UPDATES</span></div>
+      <div id="events-list" class="event-grid">
+        <article class="event-card featured"><div class="event-date"><b>01</b><span>COMMUNITY</span></div><div><span class="tag">WELCOME</span><h3>Welcome to Student Connect</h3><p>Introduce yourself, meet fellow students and help shape our learning community.</p><small>Agenda: introductions · learning goals · community guidelines</small></div></article>
+        <article class="event-card"><div class="event-date"><b>02</b><span>STUDY</span></div><div><span class="tag tag-blue">STUDY SESSION</span><h3>Peer learning & study support</h3><p>Share study strategies, ask questions and learn from one another.</p><small>Agenda: course challenges · study tips · Q&A</small></div></article>
+      </div>
+      <p class="muted tiny" id="events-status">Sign in to see live community updates when Firebase is configured.</p>
+    </section>
+
+    <section class="meeting-section" id="meeting">
+      <div class="meeting-intro"><div class="eyebrow light">COME TO THE TABLE</div><h2>Meet face to face,<br>wherever you are.</h2><p>Join a community room for student discussions, peer support and shared learning. Your speaker card can show your academic profile while you have the floor.</p><div class="meeting-points"><span>✓ Video meeting room</span><span>✓ Speaker profile card</span><span>✓ Shared agenda</span></div></div>
+      <div class="meeting-panel">
+        <div class="panel-top"><span><i class="live-dot"></i> COMMUNITY MEETING ROOM</span><span class="secure-label">● CONNECTED SPACE</span></div>
+        <div id="auth-panel" class="auth-panel">
+          <h3>Join your student community</h3><p>Sign in to use your student profile and enter the meeting.</p>
+          <label>Email address<input id="email" type="email" placeholder="you@example.com" autocomplete="email"></label>
+          <label>Password<input id="password" type="password" placeholder="At least 6 characters" autocomplete="current-password"></label>
+          <div class="auth-actions"><button id="email-signin" class="btn btn-primary full">Sign in with email</button><button id="email-signup" class="btn btn-outline full">Create account</button></div>
+          <div class="divider"><span>OR</span></div><button id="google-signin" class="google-btn"><b>G</b> Continue with Google</button>
+          <p class="tiny muted">Use an email you can access. Only share academic and location details you are comfortable showing to other participants.</p>
+          <p id="auth-message" class="message" role="status"></p>
+        </div>
+        <div id="profile-panel" class="hidden">
+          <h3>Your student profile</h3><p>This information appears on your speaker card during meetings.</p>
+          <label>Full name<input id="full-name" placeholder="Your name as you want it displayed"></label>
+          <label>Programme / department<input id="department" placeholder="e.g. Bachelor's in Computer Science"></label>
+          <div class="form-row"><label>Study level<input id="level" placeholder="e.g. Undergraduate"></label><label>Year / stage<input id="year" placeholder="e.g. Year 2"></label></div>
+          <label>State / region (optional)<input id="region" placeholder="e.g. Central Equatoria"></label>
+          <button id="save-profile" class="btn btn-primary full">Save profile & continue</button>
+          <p class="tiny muted">Please enter your location manually. This site does not need your precise GPS location.</p>
+        </div>
+        <div id="ready-panel" class="hidden">
+          <div class="profile-preview"><div class="avatar avatar-large" id="profile-initials">U</div><div><b id="preview-name">Student</b><small id="preview-detail">Programme · Year</small><small id="preview-region">South Sudan</small></div></div>
+          <button id="join-meeting" class="btn btn-primary full">Join the meeting room ↗</button>
+          <p class="tiny muted">By joining, your display name and profile details may be visible to other participants.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="live-room" class="section live-room hidden">
+      <div class="section-heading"><div><div class="eyebrow">LIVE SESSION</div><h2>At the community table</h2><p>Use the controls below to share the floor with fellow students.</p></div><button id="leave-meeting" class="btn btn-outline">Leave room</button></div>
+      <div class="room-layout"><div class="video-wrap"><div id="jitsi-container"></div></div><aside class="speaker-side"><div class="speaker-label">CURRENT SPEAKER</div><div id="speaker-card" class="speaker-card"><div class="avatar avatar-large">?</div><h3>Waiting for a speaker</h3><p>When someone takes the floor, their student profile will appear here.</p></div><button id="take-floor" class="btn btn-primary full">I have the floor</button><button id="release-floor" class="btn btn-outline full">Finish speaking</button><p class="tiny muted">Please take turns and keep discussions respectful.</p></aside></div>
+    </section>
+
+    <section class="section values"><div><div class="eyebrow">OUR COMMUNITY</div><h2>Every student has a seat.</h2></div><p>Whether you are beginning your first year, completing your final courses, or pursuing postgraduate studies, your experience and perspective matter. Let’s make learning less isolating and more connected.</p></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">U</span><span>UoPeople <b>South Sudan</b><small>STUDENT CONNECT</small></span></a><span>Built for connection, collaboration and lifelong learning.</span><span>Independent student community initiative · Not an official UoPeople website.</span></footer>
+  <script src="https://meet.jit.si/external_api.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
