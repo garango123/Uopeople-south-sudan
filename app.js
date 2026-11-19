@@ -13,16 +13,17 @@ const firebaseConfig = {
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCZeYO5I9HEHYpKpPtGNXvWL3H8Ye5aaFc",
-    authDomain: "uopeople-south-sudan.firebaseapp.com",
-    projectId: "uopeople-south-sudan",
-    storageBucket: "uopeople-south-sudan.firebasestorage.app",
-    messagingSenderId: "671959173986",
-    appId: "1:671959173986:web:0220fff3dddf6bb1813a3b",
-    measurementId: "G-37SFR1EJ71"
-  };
+  
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCZeYO5I9HEHYpKpPtGNXvWL3H8Ye5aaFc",
+  authDomain: "uopeople-south-sudan.firebaseapp.com",
+  projectId: "uopeople-south-sudan",
+  storageBucket: "uopeople-south-sudan.firebasestorage.app",
+  messagingSenderId: "671959173986",
+  appId: "1:671959173986:web:0220fff3dddf6bb1813a3b",
+  measurementId: "G-37SFR1EJ71"
+};
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
