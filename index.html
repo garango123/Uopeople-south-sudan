@@ -65,23 +65,26 @@
         <div id="profile-panel" class="hidden">
           <h3>Your student profile</h3><p>This information appears on your speaker card during meetings.</p>
           <label>Full name<input id="full-name" placeholder="Your name as you want it displayed"></label>
-          <label>Programme / department<input id="department" placeholder="e.g. Bachelor's in Computer Science"></label>
+          <label>Programme / department<input id="department" placeholder="e.g. Computer Science"></label>
+          <label>Town / city<input id="town" placeholder="e.g. Juba"></label>
           <div class="form-row"><label>Study level<input id="level" placeholder="e.g. Undergraduate"></label><label>Year / stage<input id="year" placeholder="e.g. Year 2"></label></div>
           <label>State / region (optional)<input id="region" placeholder="e.g. Central Equatoria"></label>
           <button id="save-profile" class="btn btn-primary full">Save profile & continue</button>
           <p class="tiny muted">Please enter your location manually. This site does not need your precise GPS location.</p>
         </div>
         <div id="ready-panel" class="hidden">
-          <div class="profile-preview"><div class="avatar avatar-large" id="profile-initials">U</div><div><b id="preview-name">Student</b><small id="preview-detail">Programme · Year</small><small id="preview-region">South Sudan</small></div></div>
+          <div class="profile-preview"><div class="avatar avatar-large" id="profile-initials">U</div><div><b id="preview-name">Student</b><small id="preview-detail">Programme · Year</small><small id="preview-region">Town · State / region</small></div></div>
           <button id="join-meeting" class="btn btn-primary full">Join the meeting room ↗</button>
           <p class="tiny muted">By joining, your display name and profile details may be visible to other participants.</p>
         </div>
       </div>
     </section>
 
+    <section id="directory" class="section directory-section"><div class="section-heading"><div><div class="eyebrow">OUR PEOPLE</div><h2>Student community</h2><p>Find fellow students by name, town and department. Sign in to view profiles.</p></div></div><div id="student-directory" class="directory-grid"><p class="muted tiny">Sign in to view student profiles.</p></div></section>
+
     <section id="live-room" class="section live-room hidden">
       <div class="section-heading"><div><div class="eyebrow">LIVE SESSION</div><h2>At the community table</h2><p>Use the controls below to share the floor with fellow students.</p></div><button id="leave-meeting" class="btn btn-outline">Leave room</button></div>
-      <div class="room-layout"><div class="video-wrap"><div id="jitsi-container"></div></div><aside class="speaker-side"><div class="speaker-label">CURRENT SPEAKER</div><div id="speaker-card" class="speaker-card"><div class="avatar avatar-large">?</div><h3>Waiting for a speaker</h3><p>When someone takes the floor, their student profile will appear here.</p></div><button id="take-floor" class="btn btn-primary full">I have the floor</button><button id="release-floor" class="btn btn-outline full">Finish speaking</button><p class="tiny muted">Please take turns and keep discussions respectful.</p></aside></div>
+      <div class="room-layout"><div class="video-wrap"><div id="jitsi-container"></div></div><aside class="speaker-side"><div class="speaker-label">CURRENT SPEAKER</div><div id="speaker-card" class="speaker-card"><div class="avatar avatar-large">?</div><h3>Waiting for a speaker</h3><p>When someone takes the floor, their student profile will appear here.</p></div><button id="take-floor" class="btn btn-primary full">I have the floor</button><button id="release-floor" class="btn btn-outline full">Finish speaking</button><p id="speaker-status" class="tiny muted" role="status">Please take turns and keep discussions respectful.</p></aside></div>
     </section>
 
     <section class="section values"><div><div class="eyebrow">OUR COMMUNITY</div><h2>Every student has a seat.</h2></div><p>Whether you are beginning your first year, completing your final courses, or pursuing postgraduate studies, your experience and perspective matter. Let’s make learning less isolating and more connected.</p></section>
