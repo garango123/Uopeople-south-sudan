@@ -1,20 +1,19 @@
 rules_version = '2';
 service cloud.firestore {
-  match /databases/{database}/documents {
-    function signedIn() { return request.auth != null; }
-    match /students/{uid} {
-      allow read: if signedIn();
-      allow create, update: if signedIn() && request.auth.uid == uid;
-    }
-    match /events/{eventId} {
-      allow read: if signedIn();
-      // Only trusted administrators should publish events.
-      // Configure admin custom claims before changing this rule to allow event writes.
-      allow write: if false;
-    }
-    match /meeting/{document} {
-      allow read: if signedIn();
-      allow create, update: if signedIn();
-    }
+ match /databases/{database}/documents {
+  function signedIn(){return request.auth != null;}
+  match /students/{uid} {
+   allow read: if signedIn();
+   allow create, update: if signedIn() && request.auth.uid == uid;
+   allow delete: if false;
   }
+  match /events/{eventId} { allow read: if signedIn(); allow write: if false; }
+  match /meeting/currentSpeaker {
+   allow read: if signedIn();
+   allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+   allow update: if signedIn() && ((request.resource.data.uid == request.auth.uid && (resource.data.uid == null || resource.data.uid == request.auth.uid)) || (request.resource.data.uid == null && resource.data.uid == request.auth.uid));
+   allow delete: if false;
+  }
+  match /{document=**} {allow read,write:if false;}
+ }
 }
