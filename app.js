@@ -1,8 +1,8 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {getAuth,GoogleAuthProvider,signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import {getFirestore,doc,setDoc,getDoc,onSnapshot,collection,query,orderBy,serverTimestamp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import {initializeFirestore,doc,setDoc,getDoc,onSnapshot,collection,query,orderBy,serverTimestamp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const firebaseConfig={apiKey:"AIzaSyCZeYO5I9HEHYpKpPtGNXvWL3H8Ye5aaFc",authDomain:"uopeople-south-sudan.firebaseapp.com",projectId:"uopeople-south-sudan",storageBucket:"uopeople-south-sudan.firebasestorage.app",messagingSenderId:"671959173986",appId:"1:671959173986:web:0220fff3dddf6bb1813a3b",measurementId:"G-37SFR1EJ71"};
-const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),$=id=>document.getElementById(id);
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=initializeFirestore(app,{experimentalForceLongPolling:true,useFetchStreams:false}),$=id=>document.getElementById(id);
 let user=null,profile=null,jitsi=null,unsubSpeaker=null,unsubDirectory=null,unsubEvents=null;
 const show=id=>$(id).classList.remove("hidden"),hide=id=>$(id).classList.add("hidden");
 const initials=n=>String(n||"Student").trim().split(/\s+/).slice(0,2).map(x=>x[0]?.toUpperCase()||"").join("");
